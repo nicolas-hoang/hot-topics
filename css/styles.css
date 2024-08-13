@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+    --black: #1f1f1f;
+    --white: #ffffff;
+    --grey: #e0e0e0;
+    --red: #C73F3F;
+    --dark-red: #811A1A;
+    --light-red: #FFF5F5; 
+}
+
+* {
+    font-family: "DM Sans", sans-serif;
+    color: var(--black);
+    margin: 0;
+    line-height: 1.5;
+    font-size: 0.75rem ;
+}
+
+body {
+    background-color: var(--light-red);
+}
+
+/* navigation bar */
+nav {
+    text-align: center;
+    margin-top: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+/* logo */
+#logo {
+    width: 80px;
+    margin: auto;
+}
+
+/* tagline */
+#tagline-background h1 {
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+/* Buttons - Home and Portfolio */
+#buttons-home-portfolio {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+#buttons-home-portfolio li {
+    list-style: none;
+}
+
+/* Each button settings */
+#buttons-home-portfolio li a {
+    text-decoration: none;
+    color: var(--dark-red);
+    width: 100%;
+    display: inline-block;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border: solid 1px var(--dark-red);
+    border-radius: 0.25em;
+}
+
+#buttons-home-portfolio  li a:hover {
+    color: var(--white);
+    background-color: var(--red);
+}
+
+/* --------- Section: article --------- */
+#section-article {
+    margin: 2em;
+}
+
+/* each article */
+article {
+    border-bottom: solid 1px var(--grey);
+    padding-bottom: 2em;
+}
+
+article:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* article title */
+.article-title {
+    text-align: center;
+    margin-bottom: 2em;
+    margin-top: 2em;
+}
+.article-image-description {
+    margin-bottom: 1em;
+}
+
+article figure img, .port-image {
+    width: 100%;
+    border-radius: 0.5em;
+}
+
+figcaption {
+    margin-top: 1em;
+    text-align: center;
+    
+}
+
+/* --------- Section: portfolio --------- */
+#section-portfolio {
+    margin: 2em;
+}
+
+.port {
+    margin-bottom: 2em;
+}
+
+#port-title {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.port-description {
+    text-align: center;
+}
+
+/* ---------- footer ---------- */
+footer {
+    text-align: center;
+    background-color: var(--dark-red);
+    padding-top: 2em;
+    padding-bottom: 2em;
+    color: var(--white);
+    margin-top: 3em;
+}
+
+footer p {
+    color: var(--white);
+}
+
+footer ul {
+    padding: 0;
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+footer ul li {
+    list-style-type: none;
+}
+
+footer ul li a i {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 2em;
+}
+
+/* ------------------------------------------------------------ */
+/* ------------ TABLET VIEW ---------- */
+
+@media only screen and (min-width: 35rem) {
+
+    * {
+        font-size: 1rem;
+    }
+
+    /* Navigation bar */
+    nav {
+        padding: 0;
+        display: grid;
+        grid-template-areas: 
+        "logo-box"
+        "buttons-home-portfolio"
+        "tagline-background";
+    }
+
+    /* logo */
+    #logo-box {
+        grid-area: logo-box;
+        width: 100%;
+        margin: auto;
+    }
+
+    /* Tagline */
+    #tagline-background {
+        grid-area: tagline-background;
+        background-image: url(../img/cover.webp);
+        background-size: cover;
+        background-position: center;
+        padding-top: 5em;
+        padding-bottom: 5em;
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    
+    /* Tagline - Text */
+    #tagline-background h1 {
+        color: var(--white);
+        margin-bottom: 0;
+    }
+
+    /* Buttons - Home and Portfolio */
+    #buttons-home-portfolio {
+        grid-area: buttons-home-portfolio;
+        flex-direction: row;
+        padding: 2em;
+    }
+
+    #buttons-home-portfolio li {
+        width: 100%;
+    }
+    /* --------- | Tablet | Section: article --------- */
+    article {
+        width: 100%;
+        overflow: hidden
+    }
+
+    #article-1 .article-title {
+        margin-top: 0;
+    }
+
+    .article-image-description {
+        float: left;
+        margin-right: 2em;
+        margin-bottom: 1em;
+        width: 40%;
+    }
+
+    figcaption {
+        text-align: left;
+    }
+
+    .article-description {
+        margin-top: 0;
+    }
+
+    /* --------- | Tablet | Section: portfolio --------- */
+    #section-portfolio {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas:
+        "port-title port-title"
+        "port-1 port-2"
+        "port-3 port-4"
+        "port-5 port-6";
+        gap: 2em;
+    }
+
+    .port {
+        margin-bottom: 0;
+    }
+
+    #port-title {
+        grid-area: port-title;
+        margin-bottom: 0;
+    }
+
+    #port-1 {
+        grid-area: port-1;
+    }
+
+    #port-2 {
+        grid-area: port-2;
+    }
+
+    #port-3 {
+        grid-area: port-3;
+    }
+
+    #port-4 {
+        grid-area: port-4;
+    }
+
+    #port-5 {
+        grid-area: port-5;
+    }
+
+    #port-6 {
+        grid-area: port-6;
+    }
+
+}
+/* ------------------------------------------------------------ */
+/* ------------ DESKTOP VIEW ---------- */
+@media only screen and (min-width: 80rem) {
+
+    * {
+        font-size: 1.25rem;
+    }
+    
+    nav {
+        margin: auto;
+        grid-template-columns: 0.5fr 2fr;
+        grid-template-areas: 
+        "logo-box buttons-home-portfolio"
+        "tagline-background tagline-background";   
+    }
+
+    #logo-box {
+        text-align: right;
+    }
+
+    #buttons-home-portfolio {
+        width: 40%;
+    }
+    #buttons-home-portfolio li a {
+        padding-top: 0.8em;
+        padding-bottom: 0.8em;
+    }
+
+    #tagline-background h1 {
+        text-align: left;
+        max-width: 60rem;
+        margin: auto;
+    }
+
+    /* --------- | Desktop | Section: article --------- */
+    #section-article {
+        max-width: 60rem;
+        margin: auto;
+    }
+
+    #article-1 .article-title {
+        margin-top: 2em;
+        
+    }
+
+    .article-title {
+        text-align: left;
+    }
+
+    .article-without-title {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .article-image-description {
+        float: none;
+        margin-right: 2em;
+        width: 40%;
+        height: auto;
+    }
+
+    .article-content {
+        width: 60%;
+
+    } 
+
+    /* --------- | Desktop | Section: portfolio --------- */
+    
+    #section-portfolio {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-areas:
+        "port-title port-title port-title"
+        "port-1 port-2 port-3"
+        "port-4 port-5 port-6";
+        max-width: 60rem;
+        margin: auto;
+    }
+
+    #port-title {
+        margin-top: 2em;
+        text-align: left;
+    }
+
+    /* ---------- | Desktop | footer ---------- */
+    #company-info, footer ul {
+        text-align: left;
+        max-width: 60rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    footer ul {
+        justify-content: flex-start;
+    }
+
+}
